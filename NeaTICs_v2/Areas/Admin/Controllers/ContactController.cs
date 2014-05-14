@@ -4,11 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using NeaTICs_v2.Models;
-using NeaTICs_v2.Repositories;
+using NeaTICs_v2;
 
 namespace NeaTICs_v2.Areas.Admin.Controllers
 {
-    [Authorize(Roles = "Administrator")]
+    //[Authorize(Roles = "Administrator")]
     public class ContactController : Controller
     {
         IContactMessageRepository _repository;

@@ -8,8 +8,10 @@ using System.Web.Routing;
 using NeaTICs_v2.Migrations;
 using NeaTICs_v2.Models;
 using System.Data.Entity;
-using NeaTICs_v2.App_Start;
+using NeaTICs.v3_MVC.App_Start;
 using System.Web.Optimization;
+using NeaTICs.v3_MVC;
+using NeaTICs_v2.DAL;
 
 namespace NeaTICs_v2
 {
@@ -20,7 +22,7 @@ namespace NeaTICs_v2
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
-            System.Data.Entity.Database.SetInitializer(new MigrateDatabaseToLatestVersion<Context, Configuration>());
+            //System.Data.Entity.Database.SetInitializer(new MigrateDatabaseToLatestVersion<Context, Configuration>());
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

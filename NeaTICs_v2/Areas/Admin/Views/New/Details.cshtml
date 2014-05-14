@@ -1,0 +1,56 @@
+﻿@model NeaTICs_v2.Models.New
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>New</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Title)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Content)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Content)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CreatedAt)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CreatedAt)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UpdatedAt)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UpdatedAt)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Url)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Url)
+    </div>
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Image)
+    </div>
+    <div class="display-field">
+        @Html.Raw("<img src=\"data:image/png;base64," + Model.ImageToRead + "\" style='width: 300px;'/>");
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

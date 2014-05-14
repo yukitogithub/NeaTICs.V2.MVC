@@ -6,23 +6,24 @@ using System.Web.Mvc;
 using NeaTICs_v2.Helpers;
 using NeaTICs_v2.Models;
 using Newtonsoft.Json.Linq;
-using NeaTICs_v2.Repositories;
+using NeaTICs_v2;
 
 namespace NeaTICs_v2.Controllers
 {
     public class HomeController : BaseController
     {
-        private IContactMessageRepository _repositoryContact;
+        //private IContactMessageRepository _repositoryContact;
 
         public HomeController()
         {
-            _repositoryContact = new ContactMessageRepository();
+            //_repositoryContact = new ContactMessageRepository();
+
         }
 
-        public HomeController(IContactMessageRepository repository)
-        {
-            _repositoryContact = repository;
-        }
+        //public HomeController(IContactMessageRepository repository)
+        //{
+        //    //_repositoryContact = repository;
+        //}
 
         public ActionResult Index()
         {
@@ -59,27 +60,27 @@ namespace NeaTICs_v2.Controllers
             return View();
         }
 
-        [HttpPost]
-        public ActionResult Contact(string data)
-        {
-            JObject o = JObject.Parse(data);
-            string Name = (string)o["Name"];
-            string Email = (string)o["Email"];
-            string Subject = (string)o["Subject"];
-            string Message = (string)o["Message"];
-            ContactMessage CMessage = new ContactMessage() { Name = Name, Email = Email, Date = DateTime.Now, Subject = Subject, Message = Message, IsRead = false };
-            try
-            {
-                _repositoryContact.New(CMessage);
-                Response.StatusCode = 200;
-            }
-            catch (Exception e)
-            {
-                Response.StatusCode = 500;
-            }
+        //[HttpPost]
+        //public ActionResult Contact(string data)
+        //{
+        //    JObject o = JObject.Parse(data);
+        //    string Name = (string)o["Name"];
+        //    string Email = (string)o["Email"];
+        //    string Subject = (string)o["Subject"];
+        //    string Message = (string)o["Message"];
+        //    ContactMessage CMessage = new ContactMessage() { Name = Name, Email = Email, Date = DateTime.Now, Subject = Subject, Message = Message, IsRead = false };
+        //    try
+        //    {
+        //        _repositoryContact.New(CMessage);
+        //        Response.StatusCode = 200;
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        Response.StatusCode = 500;
+        //    }
 
-            return View();
-        }
+        //    return View();
+        //}
 
         public ActionResult SetCulture(string culture)
         {

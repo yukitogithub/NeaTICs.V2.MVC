@@ -7,6 +7,7 @@ using System.Threading;
 using System.Web.Mvc;
 using System.Data.Entity.Infrastructure;
 using WebMatrix.WebData;
+using NeaTICs_v2.DAL;
 
 namespace NeaTICs_v2.Filters
 {
@@ -37,7 +38,7 @@ namespace NeaTICs_v2.Filters
                             ((IObjectContextAdapter)context).ObjectContext.CreateDatabase();
                         }
                     }
-                    WebSecurity.InitializeDatabaseConnection("DefaultConnection", "UsersProfiles", "Id", "Username", autoCreateTables: false);
+                    WebSecurity.InitializeDatabaseConnection("DefaultConnectionLocal", "UsersProfiles", "Id", "Username", autoCreateTables: false);
                 }
                 catch (Exception ex)
                 {

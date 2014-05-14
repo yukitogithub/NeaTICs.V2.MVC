@@ -16,6 +16,8 @@ namespace NeaTICs_v2.Models
         public DbSet<Informatorio> Informatorio { get; set; }
         public DbSet<InformatorioForm> InformatorioForms { get; set; }
         public DbSet<Institution> Institutions { get; set; }
+        public DbSet<New> News { get; set; }
+        public DbSet<Events> Events { get; set; }
         public DbSet<Person> People { get; set; }
         public DbSet<Profile> Profiles { get; set; }
         public DbSet<Project> Projects { get; set; }
