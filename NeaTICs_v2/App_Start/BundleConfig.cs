@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Optimization;
 
-namespace NeaTICs_v2.App_Start
+namespace NeaTICs.v3_MVC.App_Start
 {
     public class BundleConfig
     {

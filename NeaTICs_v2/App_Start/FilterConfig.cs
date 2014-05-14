@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace NeaTICs_v2
+namespace NeaTICs.v3_MVC
 {
     public class FilterConfig
     {

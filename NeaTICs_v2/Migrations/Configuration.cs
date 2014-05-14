@@ -6,15 +6,18 @@ namespace NeaTICs_v2.Migrations
     using System.Linq;
     using WebMatrix.WebData;
     using System.Web.Security;
+    using NeaTICs_v2.Models;
+    using NeaTICs_v2.DAL;
+    using System.Collections.Generic;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<NeaTICs_v2.Models.Context>
+    internal sealed class Configuration : DbMigrationsConfiguration<NeaTICs_v2.DAL.Context>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(NeaTICs_v2.Models.Context context)
+        protected override void Seed(NeaTICs_v2.DAL.Context context)
         {
             #region Seed Example
             //  This method will be called after migrating to the latest version.
@@ -51,6 +54,13 @@ namespace NeaTICs_v2.Migrations
             //}
 
             #endregion
+            var students = new List<UserProfile>
+            {
+                new UserProfile { Username = "Carson"},
+                new UserProfile { Username = "Kari"}
+            };
+            students.ForEach(s => context.UsersProfiles.AddOrUpdate(p => p.Username, s));
+            context.SaveChanges();
         }
     }
 }
